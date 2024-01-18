@@ -5,7 +5,7 @@ Python is used as the primary language.
 Taking heat conduction as an example, if we want to calculate the stiffness matrix, mass matrix, and load vector of a pyramid shaped element, we need to perform triple integration of the correlation function f (x, y, z) within the element.  
 
 
-At this point, the **PyramidInt64.pyd** file came in handy. In this file, a function IntInPyramid (func) was defined, which takes a function name func as a parameter and returns a float type result, which is the integration value of the function in the standard integral domain.  
+At this point, the **PyramidInt64.pyd** file came in handy. In this file, a function **IntInPyramid (func)** was defined, which takes a function name as a parameter and returns a *float* type result, which is the integration value of the function in the standard integral domain.  
 
 ### the standard integral domain of pyramid shaped element
 ```python
@@ -18,9 +18,9 @@ At this point, the **PyramidInt64.pyd** file came in handy. In this file, a func
 
 ### Notes
 * If you want to convert any pyramid type integral domain into a standard integral domain, you need to perform coordinate transformation on the original function, and IntInPyramid (func) can only handle functions in the standard integral domain.  
-* Make sure that you have installed numpy.  
+* Make sure that you have installed *numpy*.  
 
-* PyramidInt64.pyd can only be operated in Python3.9.  
+* PyramidInt64.pyd can only be operated in *Python3.9*.  
 
 ### Examples
 code1:  
@@ -46,12 +46,12 @@ print(PyramidInt64.IntInPyramid(func))
 ```
 result：  
 `1.3333333333333357`  
-It is obvious that  code 2 calculates the volume of the standard pyramid, which is' 4/3 '.  
+It is obvious that  code 2 calculates the volume of the standard pyramid, which is `4/3`.  
 
 ### integral precision
 For polynomials, the **IntInPyramid** function can handle the highest order of`x^7*y^7*z^7`.  
 ### execution speed
-Compare **IntInPyramid** with scipy.integrate.tplquad,let's see the difference between them:  
+Compare **IntInPyramid** with *scipy.integrate.tplquad*:  
 
 code3:  
 ```python
