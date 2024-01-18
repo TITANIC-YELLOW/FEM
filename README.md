@@ -11,15 +11,20 @@ At this point, the **PyramidInt64.pyd** file came in handy. In this file, a func
 在这个时候**PyramidInt64.pyd**文件就派上了用场，在这个文件中定义了一个函数IntInPyramid(func)，它获取一个函数名func作为参数，返回一个float类型的结果，也就是该函数在标准积分域里的积分值。  
 
 ### the standard integral domain of pyramid shaped element（金字塔型单元的标准积分域）
-**(-1,-1,0),
+`(-1,-1,0),
 (1,-1,0),
 (1,1,0),
 (-1,1,0),
-(0,0,1)**  
+(0,0,1)`  
 
-If you want to convert any pyramid type integral domain into a standard integral domain, you need to perform coordinate transformation on the original function, and IntInPyramid (func) can only handle functions in the standard integral domain.  
-如果要将任意的金字塔型积分域转换为标准积分域，需要对原函数进行坐标变换，IntInPyramid(func)只能处理标准积分域里的函数。  
-
+### Notes（注意事项）
+* If you want to convert any pyramid type integral domain into a standard integral domain, you need to perform coordinate transformation on the original function, and IntInPyramid (func) can only handle functions in the standard integral domain.  
+如果要将任意的金字塔型积分域转换为标准积分域，需要对原函数进行坐标变换，IntInPyramid(func)只能处理标准积分域里的函数。
+* Make sure that you have installed numpy.  
+确保你已经安装了numpy。
+* PyramidInt64.pyd can only be operated in Python3.9.  
+PyramidInt64.pyd只能在Python3.9中运行。
+### Examples（示例代码）
 示例代码1：  
 ```python  
 import PyramidInt64
@@ -43,7 +48,7 @@ print(PyramidInt64.IntInPyramid(func))
 ```
 结果为：  
 `1.3333333333333357`  
-很显然示例代码2所求的就是标准金字塔的体积，即：`4/3`  
+很显然示例代码2所求的就是标准金字塔的体积，即：`4/3`。  
 
 ### 积分精度
 对于多项式，IntInPyramid函数可以处理最高阶数为`x^7*y^7*z^7`。  
