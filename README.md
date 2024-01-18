@@ -1,10 +1,11 @@
 # FiniteElementMethod
-This repository contains codes used in FEM.  
-Python is used as the primary language.  
-## Integral in Pyramid
-A function named *IntInPyramid* in *PyramidInt64.pyd* was created to calculate triple integration of the correlation function f (x, y, z) within the pyramid-shaped element.  
+This repository contains codes used in FEM.
 
-It takes a function name as a parameter,  
+*Python* is used as the primary language.
+## Integral in Pyramid
+A function named *IntInPyramid* in *PyramidInt64.pyd* was created to calculate triple integration of the correlation function f (x, y, z) within the pyramid-shaped element.
+
+It takes a function name as a parameter,
 
 and returns a *float* type result, which is the integration value of the function in the standard integral domain.  
 
