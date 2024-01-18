@@ -13,7 +13,24 @@ At this point, the **PyramidInt64.pyd** file came in handy. In this file, a func
 (1,1,0),
 (-1,1,0),
 (0,0,1)`  
+Run this code to see the standard integral domain of pyramid shaped element:
+```python
+import matplotlib.pyplot as plt
 
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+X = [-1, -1, 1, 1, 0]
+Y = [-1, 1, -1, 1, 0]
+Z = [0, 0, 0, 0, 1]
+ax.scatter3D(X, Y, Z)
+ax.plot_trisurf(X, Y, Z, color='r')
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.set_zlabel('z')
+plt.title('Standard Pyramid')
+plt.show()
+
+```
 ### Notes
 * If you want to convert any pyramid type integral domain into a standard integral domain, you need to perform coordinate transformation on the original function, and IntInPyramid (func) can only handle functions in the standard integral domain.  
 * Make sure that you have installed numpy.  
