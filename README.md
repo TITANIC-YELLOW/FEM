@@ -50,6 +50,7 @@ It is obvious that  code 2 calculates the volume of the standard pyramid, which 
 For polynomials, the **IntInPyramid** function can handle the highest order of`x^7*y^7*z^7`.  
 ### execution speed
 Compare **IntInPyramid** with scipy.integrate.tplquad,let's see the difference between them:  
+code3:  
 ```python
 import time
 from scipy import integrate
