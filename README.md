@@ -13,6 +13,7 @@ At this point, the **PyramidInt64.pyd** file came in handy. In this file, a func
 (1,1,0),
 (-1,1,0),
 (0,0,1)`  
+
 Run this code to see the standard integral domain of pyramid shaped element:
 ```python
 import matplotlib.pyplot as plt
