@@ -2,7 +2,20 @@
 This repository contains codes used in FEM.
 
 *Python* is used as the primary language.
-## Integral in Pyramid
+## HCMVG.cp39-win_amd64.pyd
+*HCMVG* was created to generate 3D-elements(tetrahedron,hexahedron,prism,pyramid)'s matrices and vectors in *heat conduction*.  
+### Notes
+* *HCMVG.cp39-win_amd64.pyd* may contain bugs and mistakes!!!
+* Make sure that you have installed *numpy*.  
+* *HCMVG.cp39-win_amd64.pyd* can only be operated in *Python3.9*.
+
+### Function Explanation
+
+#### V_tetra
+#### m_tetra
+#### k_tetra
+
+## PyramidInt64.pyd
 A function named *IntInPyramid* in *PyramidInt64.pyd* was created to calculate triple integration of the correlation function f (x, y, z) within the pyramid-shaped element.
 
 It takes a function name as a parameter,
@@ -21,7 +34,7 @@ and returns a *float* type result, which is the integration value of the functio
 ### Notes
 * *IntInPyramid* can only handle functions in the standard integral domain, so you need to perform coordinate transformation on the original function if you the integral domain is not standard.
 * Make sure that you have installed *numpy*.  
-* PyramidInt64.pyd can only be operated in *Python3.9*.  
+* *PyramidInt64.pyd* can only be operated in *Python3.9*.  
 
 ### Examples
 code1:  
