@@ -31,7 +31,7 @@ print(ans)
 ```
 result: `0.16666666666666666`  
 
-* *m_tetra(coor:np.ndarray, p, c) -> np.ndarray:*
+* *m_tetra(coor:np.ndarray, p:float, c:float) -> np.ndarray:*
 
 Input: `Coordinates of four vertices, density, specific heat`  
 Output: `mass matrix of the element`  
@@ -55,7 +55,9 @@ result:
  [0.00833333 0.00833333 0.00833333 0.01666667]]
 ```
 
-* k_tetra
+* *k_tetra(coor:np.ndarray, ThermalConductivity:list) -> np.ndarray:*
+
+
 #### Hexahedron
 * V_hexa
 * m_hexa
