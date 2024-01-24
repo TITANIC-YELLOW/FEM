@@ -5,7 +5,7 @@ This repository contains codes used in FEM.
 ## HCMVG.cp39-win_amd64.pyd
 *HCMVG* was created to generate 3D-elements(tetrahedron,hexahedron,prism,pyramid)'s matrices and vectors in *heat conduction*.  
 ### Notes
-* *HCMVG.cp39-win_amd64.pyd* may contain bugs and mistakes.
+* *HCMVG.cp39-win_amd64.pyd* may contain mistakes.
 * Make sure that you have installed *numpy*.  
 * *HCMVG.cp39-win_amd64.pyd* can only be operated in *Python3.9*.
 
@@ -13,9 +13,7 @@ This repository contains codes used in FEM.
 #### Tetrahedron
 * *V_tetra(coor:np.ndarray) -> float:*
 
-Input: `Coordinates of four vertices`
-
-Output: `Volume of the tetrahedron`  
+The function gets coordinates of four vertices and returns the volume of the tetrahedron element.
 
 Example:
 ```python
@@ -33,8 +31,9 @@ result: `0.16666666666666666`
 
 * *m_tetra(coor:np.ndarray, p:float, c:float) -> np.ndarray:*
 
-Input: `Coordinates of four vertices, density, specific heat`  
-Output: `mass matrix of the element`  
+The function gets coordinates of four vertices,material's density and specific heat  
+and returns the mass_matrix of the tetrahedron element.
+
 Example:  
 ```python
 import HCMVG
@@ -57,6 +56,9 @@ result:
 
 * *k_tetra(coor:np.ndarray, ThermalConductivity:list) -> np.ndarray:*
 
+Input: `Coordinates of four vertices, ThermalConductivity:list`  
+Output: `mass matrix of the element`  
+Example:  
 
 #### Hexahedron
 * V_hexa
