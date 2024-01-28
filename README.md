@@ -4,15 +4,16 @@ This repository contains codes used in designing the solver for heat conduction.
 The programs are designed primarily according to finite element method(FEM).
 
 *Python* is used as the primary language.
-## HCMVG.cp39-win_amd64.pyd
+## HCMVG.pyd
 *HCMVG* was created to generate 3D-elements(tetrahedron,hexahedron,prism,pyramid)'s matrices and vectors in *heat conduction*.  
 ### Notes
-* *HCMVG.cp39-win_amd64.pyd* may contain mistakes.
+* *HCMVG.pyd* may contain mistakes.
 * Make sure that you have installed *numpy*.  
-* *HCMVG.cp39-win_amd64.pyd* can **only** be operated in *Python3.9*.
-
+* *HCMVG.pyd* can **only** be operated in *Python3.9*.
+### How to use
+Download both *HCMVG.pyd* and *HCMVG.pyi* to your Python file directory, and ```import HCMVG``` if you want to use the function in *HCMVG.pyd*.
 ### Function Explanation
-The following is an introduction to some functions, and you will see more details in *HCMVG.pyi*.
+The following is an introduction to a part of functions, and you will see more details in *HCMVG.pyi*.
 #### Tetrahedron
 * *V_tetra(coor:np.ndarray) -> float:*
 
@@ -325,9 +326,7 @@ result:
 ## PyramidInt64.pyd
 A function named *IntInPyramid* in *PyramidInt64.pyd* was created to calculate triple integration of the correlation function f (x, y, z) within the pyramid-shaped element.
 
-It takes a function name as a parameter,
-
-and returns a *float* type result, which is the integration value of the function in the standard integral domain.  
+It takes a function name as a parameter(or a lambda function is OK), and returns a *float* type result, which is the integration value of the function in the standard integral domain.  
 
 ### The standard integral domain of pyramid-shaped element
 ```python
