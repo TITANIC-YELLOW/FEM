@@ -13,8 +13,6 @@ This repository contains codes used in FEM.
 #### Tetrahedron
 * *V_tetra(coor:np.ndarray) -> float:*
 
-In this function, *coor* refers to the coordinates of the four vertices of a tetrahedron and the output is the volume of the tetrahedron element.
-
 Example:
 ```python
 import HCMVG
@@ -30,8 +28,6 @@ print(ans)
 result: `0.16666666666666666`  
 
 * *m_tetra(coor:np.ndarray, p:float, c:float) -> np.ndarray:*
-
-In this function, *coor* refers to the coordinates of the four vertices of a tetrahedron, *p* is the density of the material, *c* is the specific heat of the material and the output is the mass matrix of the tetrahedron element.
 
 Example:  
 ```python
@@ -54,8 +50,6 @@ result:
 ```
 
 * *k_tetra(coor:np.ndarray, ThermalConductivity:list) -> np.ndarray:*
-
-In this function, *coor* refers to the coordinates of the four vertices of a tetrahedron, *ThermalConductivity* is the thermal conductivity of the material(for isotropic materials, *ThermalConductivity* equals a constant multiplies the *list[1, 1, 1]*), and the output is the stiffness matrix of the tetrahedron element.
 
 Example:  
 ```python
@@ -81,8 +75,6 @@ result:
 #### Hexahedron
 * *V_hexa(coor:np.ndarray) -> float:*
 
-In this function, *coor* refers to the coordinates of the eight vertices of a hexahedron and the output is the volume of the hexahedron element.
-
 Example:
 ```python
 import HCMVG
@@ -104,9 +96,7 @@ result:
 6.0
 ```
 
-* m_hexa
-
-In this function, *coor* refers to the coordinates of the eight vertices of a hexahedron, *p* is the density of the material, *c* is the specific heat of the material and the output is the mass matrix of the hexahedron element.
+* *m_hexa(coor:np.ndarray, p:float, c:float) -> np.ndarray:*
 
 Example:
 ```python
@@ -144,9 +134,7 @@ result:
   0.11111111 0.22222222]]
 ```
 
-* k_hexa
-
-In this function, *coor* refers to the coordinates of the eight vertices of a hexahedron, *ThermalConductivity* is the thermal conductivity of the material(for isotropic materials, *ThermalConductivity* equals a constant multiplies the *list[1, 1, 1]*), and the output is the stiffness matrix of the hexahedron element.
+* *k_hexa(coor:np.ndarray, ThermalConductivity:list) -> np.ndarray:*
 
 Example:
 ```python
@@ -186,49 +174,151 @@ result:
 ```
 
 #### Prism
-* V_prism
+* *V_prism(coor:np.ndarray) -> float:*
+
 Example:
 ```python
+import HCMVG
+import numpy as np
+
+coor = np.array([[0, 0, 0],
+                 [1, 0, 0],
+                 [0, 2, 0],
+                 [0, 0, 3],
+                 [1, 0, 3],
+                 [0, 2, 3],
+                 ])
+ans = HCMVG.V_prism(coor)
+print(ans)
 ```
 result:
 ```python
+2.999999999999999
 ```
-* m_prism
+* *m_prism(coor:np.ndarray, p:float, c:float) -> np.ndarray:*
+
 Example:
 ```python
+import HCMVG
+import numpy as np
+
+coor = np.array([[0, 0, 0],
+                 [1, 0, 0],
+                 [0, 2, 0],
+                 [0, 0, 3],
+                 [1, 0, 3],
+                 [0, 2, 3],
+                 ])
+ans = HCMVG.m_prism(coor,1,1)
+print(ans)
 ```
 result:
 ```python
+[[0.16666667 0.08333333 0.08333333 0.08333333 0.04166667 0.04166667]
+ [0.08333333 0.16666667 0.08333333 0.04166667 0.08333333 0.04166667]
+ [0.08333333 0.08333333 0.16666667 0.04166667 0.04166667 0.08333333]
+ [0.08333333 0.04166667 0.04166667 0.16666667 0.08333333 0.08333333]
+ [0.04166667 0.08333333 0.04166667 0.08333333 0.16666667 0.08333333]
+ [0.04166667 0.04166667 0.08333333 0.08333333 0.08333333 0.16666667]]
 ```
-* k_prism
+* *k_prism(coor:np.ndarray, ThermalConductivity:list) -> np.ndarray:*
+
 Example:
 ```python
+import HCMVG
+import numpy as np
+
+coor = np.array([[0, 0, 0],
+                 [1, 0, 0],
+                 [0, 2, 0],
+                 [0, 0, 3],
+                 [1, 0, 3],
+                 [0, 2, 3],
+                 ])
+ThermalConductivity = [1, 1, 1]
+ans = HCMVG.k_prism(coor, ThermalConductivity)
+print(ans)
 ```
 result:
 ```python
+[[ 1.30555556 -0.97222222 -0.22222222  0.56944444 -0.52777778 -0.15277778]
+ [-0.97222222  1.05555556  0.02777778 -0.52777778  0.44444444 -0.02777778]
+ [-0.22222222  0.02777778  0.30555556 -0.15277778 -0.02777778  0.06944444]
+ [ 0.56944444 -0.52777778 -0.15277778  1.30555556 -0.97222222 -0.22222222]
+ [-0.52777778  0.44444444 -0.02777778 -0.97222222  1.05555556  0.02777778]
+ [-0.15277778 -0.02777778  0.06944444 -0.22222222  0.02777778  0.30555556]]
 ```
 #### Pyramid
-* V_pyramid
+* *V_pyramid(coor:np.ndarray):*
+
 Example:
 ```python
+import HCMVG
+import numpy as np
+
+coor = np.array([[0, 0, 0],
+                 [2, 0, 0],
+                 [2, 2, 0],
+                 [0, 2, 0],
+                 [1, 1, 1],
+                 ])
+ans = HCMVG.V_pyramid(coor)
+print(ans)
 ```
 result:
 ```python
+1.333333333333334
 ```
-* m_pyramid
+* *m_pyramid(coor:np.ndarray, p:float, c:float) -> np.ndarray:*
+
 Example:
 ```python
+import HCMVG
+import numpy as np
+
+coor = np.array([[0, 0, 0],
+                 [2, 0, 0],
+                 [2, 2, 0],
+                 [0, 2, 0],
+                 [1, 1, 1],
+                 ])
+ans = HCMVG.m_pyramid(coor, 1, 1)
+print(ans)
 ```
 result:
 ```python
+[[0.08888759 0.04444574 0.02222093 0.04444574 0.05      ]
+ [0.04444574 0.08888759 0.04444574 0.02222093 0.05      ]
+ [0.02222093 0.04444574 0.08888759 0.04444574 0.05      ]
+ [0.04444574 0.02222093 0.04444574 0.08888759 0.05      ]
+ [0.05       0.05       0.05       0.05       0.13333333]]
 ```
-* k_pyramid
+* *k_pyramid(coor:np.ndarray, ThermalConductivity:list) -> np.ndarray:*
+
 Example:
 ```python
+import HCMVG
+import numpy as np
+
+coor = np.array([[0, 0, 0],
+                 [2, 0, 0],
+                 [2, 2, 0],
+                 [0, 2, 0],
+                 [1, 1, 1],
+                 ])
+ThermalConductivity = [1, 1, 1]
+ans = HCMVG.k_pyramid(coor, ThermalConductivity)
+print(ans)
 ```
 result:
 ```python
+[[ 0.31447615  0.01885718 -0.01885718  0.01885718 -0.33333333]
+ [ 0.01885718  0.31447615  0.01885718 -0.01885718 -0.33333333]
+ [-0.01885718  0.01885718  0.31447615  0.01885718 -0.33333333]
+ [ 0.01885718 -0.01885718  0.01885718  0.31447615 -0.33333333]
+ [-0.33333333 -0.33333333 -0.33333333 -0.33333333  1.33333333]]
 ```
+
 ## PyramidInt64.pyd
 A function named *IntInPyramid* in *PyramidInt64.pyd* was created to calculate triple integration of the correlation function f (x, y, z) within the pyramid-shaped element.
 
