@@ -1,5 +1,7 @@
-# FiniteElementMethod
-This repository contains codes used in FEM.
+# SolverDesignforHeatConduction
+This repository contains codes used in designing the solver for heat conduction.
+
+The programs are designed primarily according to finite element method(FEM).
 
 *Python* is used as the primary language.
 ## HCMVG.cp39-win_amd64.pyd
@@ -10,6 +12,7 @@ This repository contains codes used in FEM.
 * *HCMVG.cp39-win_amd64.pyd* can **only** be operated in *Python3.9*.
 
 ### Function Explanation
+The following is an introduction to some functions, and you will see more details in *HCMVG.pyi*.
 #### Tetrahedron
 * *V_tetra(coor:np.ndarray) -> float:*
 
