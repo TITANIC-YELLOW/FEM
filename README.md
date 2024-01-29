@@ -15,7 +15,7 @@ Download both *HCMVG.pyd* and *HCMVG.pyi* to your Python file directory, and ```
 ### Function Explanation
 The following is an introduction to a part of functions, and you will see more details in *HCMVG.pyi*.
 #### Tetrahedron
-* *V_tetra(coor:np.ndarray) -> float:*
+* *V_tetra(CoordinateArray:np.ndarray) -> float:*
 
 Example:
 ```python
@@ -31,7 +31,7 @@ print(ans)
 ```
 result: `0.16666666666666666`  
 
-* *m_tetra(coor:np.ndarray, p:float, c:float) -> np.ndarray:*
+* *m_tetra(CoordinateArray:np.ndarray, p:float, c:float) -> np.ndarray:*
 
 Example:  
 ```python
@@ -53,7 +53,7 @@ result:
  [0.00833333 0.00833333 0.00833333 0.01666667]]
 ```
 
-* *k_tetra(coor:np.ndarray, ThermalConductivity:list) -> np.ndarray:*
+* *k_tetra(CoordinateArray:np.ndarray, ThermalConductivity:list) -> np.ndarray:*
 
 Example:  
 ```python
@@ -77,7 +77,7 @@ result:
 ```
 
 #### Hexahedron
-* *V_hexa(coor:np.ndarray) -> float:*
+* *V_hexa(CoordinateArray:np.ndarray) -> float:*
 
 Example:
 ```python
@@ -100,7 +100,7 @@ result:
 6.0
 ```
 
-* *m_hexa(coor:np.ndarray, p:float, c:float) -> np.ndarray:*
+* *m_hexa(CoordinateArray:np.ndarray, p:float, c:float) -> np.ndarray:*
 
 Example:
 ```python
@@ -138,7 +138,7 @@ result:
   0.11111111 0.22222222]]
 ```
 
-* *k_hexa(coor:np.ndarray, ThermalConductivity:list) -> np.ndarray:*
+* *k_hexa(CoordinateArray:np.ndarray, ThermalConductivity:list) -> np.ndarray:*
 
 Example:
 ```python
@@ -178,7 +178,7 @@ result:
 ```
 
 #### Prism
-* *V_prism(coor:np.ndarray) -> float:*
+* *V_prism(CoordinateArray:np.ndarray) -> float:*
 
 Example:
 ```python
@@ -199,7 +199,7 @@ result:
 ```python
 2.999999999999999
 ```
-* *m_prism(coor:np.ndarray, p:float, c:float) -> np.ndarray:*
+* *m_prism(CoordinateArray:np.ndarray, p:float, c:float) -> np.ndarray:*
 
 Example:
 ```python
@@ -225,7 +225,7 @@ result:
  [0.04166667 0.08333333 0.04166667 0.08333333 0.16666667 0.08333333]
  [0.04166667 0.04166667 0.08333333 0.08333333 0.08333333 0.16666667]]
 ```
-* *k_prism(coor:np.ndarray, ThermalConductivity:list) -> np.ndarray:*
+* *k_prism(CoordinateArray:np.ndarray, ThermalConductivity:list) -> np.ndarray:*
 
 Example:
 ```python
@@ -253,7 +253,7 @@ result:
  [-0.15277778 -0.02777778  0.06944444 -0.22222222  0.02777778  0.30555556]]
 ```
 #### Pyramid
-* *V_pyramid(coor:np.ndarray):*
+* *V_pyramid(CoordinateArray:np.ndarray):*
 
 Example:
 ```python
@@ -273,7 +273,7 @@ result:
 ```python
 1.333333333333334
 ```
-* *m_pyramid(coor:np.ndarray, p:float, c:float) -> np.ndarray:*
+* *m_pyramid(CoordinateArray:np.ndarray, p:float, c:float) -> np.ndarray:*
 
 Example:
 ```python
@@ -297,7 +297,7 @@ result:
  [0.04444574 0.02222093 0.04444574 0.08888759 0.05      ]
  [0.05       0.05       0.05       0.05       0.13333333]]
 ```
-* *k_pyramid(coor:np.ndarray, ThermalConductivity:list) -> np.ndarray:*
+* *k_pyramid(CoordinateArray:np.ndarray, ThermalConductivity:list) -> np.ndarray:*
 
 Example:
 ```python
