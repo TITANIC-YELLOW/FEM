@@ -9,7 +9,7 @@ The programs are designed primarily according to finite element method(FEM).
 ### Notes
 * *HCMVG.pyd* may contain mistakes.
 * Make sure that you have installed *numpy*.  
-* *HCMVG.pyd* can **only** be operated in *Python3.9*.
+* *HCMVG.pyd* can **only** be operated in *Python3.9* or *Python3.10*.
 ### How to use
 Download both *HCMVG.pyd* and *HCMVG.pyi* to your Python file directory, and ```import HCMVG``` if you want to use the function in *HCMVG.pyd*.
 ### Function Explanation
