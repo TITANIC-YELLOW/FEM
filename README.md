@@ -9,7 +9,7 @@ The programs are designed primarily according to finite element method(FEM).
 ### Notes
 * *HCMVG.pyd* may contain mistakes.
 * Make sure that you have installed *numpy*.  
-* *HCMVG.pyd* can **only** be operated in *Python3.9* or *Python3.10*.
+* *HCMVG.pyd* can **only** be operated in *Python3.10*.
 ### How to use
 Download both *HCMVG.pyd* and *HCMVG.pyi* to your Python file directory, and ```import HCMVG``` if you want to use the function in *HCMVG.pyd*.
 ### Function Explanation
@@ -368,8 +368,6 @@ result：
 `1.3333333333333357`  
 It is obvious that  code 2 calculates the volume of the standard pyramid, which is `4/3`.  
 
-### Integral Precision
-For polynomials, the *IntInPyramid* function can handle the highest order of`x^7*y^7*z^7`.  
 ### Execution Speed
 Compare *IntInPyramid* with *scipy.integrate.tplquad*:  
 
